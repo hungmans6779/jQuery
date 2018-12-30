@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Jquery</title>	
+<script type="text/javascript" src="../jquery-1.2.1.pack.js"></script>
+  <script>
+//editable
+function jtabledit(){
+name='#'+this.id 
+jsrc=$(name).html()
+if (jsrc.indexOf('<INPUT')>0){
+jsrc=jsrc.replace(/<INPUT value=|<INPUT/g,'').replace(/><\/TD>/g,'</TD>')
+}else{
+a=jsrc.match(/[^>]*<\/TD>/g)
+for (i=0;i<a.length;i++){
+	a[i]=a[i].replace(/<\/TD>/g,'')
+	jsrc=jsrc.replace('<TD>'+a[i]+'</TD>','<TD><input value='+a[i]+'></TD>')
+}}
+$(name).html(jsrc)
+}
+function jtable2db(name){
+jsrc=$(name).html()
+jsrc=jsrc.match(/[^>]*?<\/TD>/g).join(',').replace(/<\/TD>/g,'')
+alert(jsrc)
+}
+jtable2db('table')
+$('table').dblclick(jtabledit)
+</script>
+
+ </HEAD>
+
+ <BODY>
+  
+  
+</head>
+<body>
+
+<table id=1>
+<tr><td>1</td><td>2</td></tr>
+<tr><td>1</td><td>1</td></tr>
+<tr><td>1</td><td>5</td></tr>
+<tr><td></td><td>2</td></tr>
+</table>
+<div></div>
+<style>
+td,input{border:#000 solid 1;}
+table{border-collapse:collapse;  }
+</style>
+</body>
+
+
+
+
+</html>
+ 

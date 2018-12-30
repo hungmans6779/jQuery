@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="http://www.eztravel.com.tw/myresources/js/jquery-1.4.2.js" ></script>
+<script language="javascript">
+<!--
+    $(document).ready(function(){
+	 
+	   $("#myText").hide();
+	   
+	   $("#a1").click(function(){
+	      //$("#myText").show("slow").html("測試啦");
+		  $("#myText").show("slow",function(){
+		     $("#myText").html("測試啦");
+		  });
+		 
+	   });
+	   
+	   
+	});
+-->
+</script>
+<title>無標題文件</title>
+</head>
+
+<body>
+  <a href="#" id="a1">顯示</a>
+  <div id="myText">
+   Test
+  </div>
+</body>
+</html>

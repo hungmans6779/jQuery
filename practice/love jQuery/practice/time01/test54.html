@@ -1,0 +1,119 @@
+<HTML>
+<HEAD>
+<TITLE>jQuery Plugins--UI/Slider--0014</TITLE>
+<META http-equiv=content-type content="text/html; charset=UTF-8">
+  <LINK href="/test/style.css" type=text/css rel=stylesheet>
+  <SCRIPT src="/test/js/jquery-1.2.6.pack.js" type=text/javascript></SCRIPT>
+  <SCRIPT src="/test/js/ui/ui.core.js" type=text/javascript></SCRIPT>
+  <SCRIPT src="/test/js/ui/ui.slider.js" type=text/javascript></SCRIPT>
+  <SCRIPT src="/test/js/ui/easing.1.3.js" type=text/javascript></SCRIPT>
+  <SCRIPT src="/test/js/ui/easing.1.3.compatibility.js" type=text/javascript></SCRIPT>
+  <SCRIPT stype="text/javascript" language="javascript">
+    <!--
+	  window.onload=function () {  
+ $('.slider').slider({
+ handle: '.handle',
+ min:0,
+ max:1400,
+ stop:function(e,ui){
+  var myv=ui.value;
+  $('.inside').animate({'left':'-'+myv+'px'}, 500, 'backin');
+//$('.inside').animate({'left':'-'+myv+'px'}, 500, 'elasin');
+//$('.inside').animate({'left':'-'+myv+'px'}, 500, 'bouncein');
+//$('.inside').animate({'left':'-'+myv+'px'}, 500, 'expoout');
+//$('.inside').animate({'left':'-'+myv+'px'}, 500, 'expoin');
+ },
+ slide:function(e,ui){
+var myv=ui.value;
+$('.inside').css({'left':'-'+myv+'px'});
+ }
+ });  
+}
+	-->	 
+	</script>
+  
+  </SCRIPT>
+  
+<style type="text/css">
+.cover{
+position:absolute;
+width:600px;
+height:130px;
+clip: rect(0px 600px 130px 0px);
+background: #4a4a4a url(mainbg.jpg) center;
+overflow:hidden;
+padding-top:10px;
+}
+.inside{
+position: relative; 
+width:2100px;
+}
+.handle {    
+position: relative; 
+cursor: move;    
+top: 0;    
+z-index: 100;  
+height: 17px;    
+width: 181px;
+background:url(macbg.png);
+}
+.slider{
+width: 544px;
+background:url(slidebg.png) no-repeat;
+margin:0 auto;
+margin-top:6px;
+
+}
+.slider span {
+            color: white;
+            font-size: 80%;
+            cursor: pointer;
+            position: relative;
+            z-index: 110;
+            top: -16px;
+        }
+        
+        .slider span.slider-lb1 {
+            left: 25px;
+        }
+        
+        .slider span.slider-lb2 {
+            left: 200px;
+        }
+        
+        .slider span.slider-lb3 {
+            left: 390px;
+        }
+		</style>
+</HEAD>
+<BODY>
+
+
+
+<DIV id=container>
+
+<DIV id=primarycontainer>
+<DIV class=primarycontent id=0 style="DISPLAY:" oldblock="block">
+
+ <DIV class=cover>
+  <DIV class=inside>
+   <IMG src="m1.jpg">
+   <IMG src="m2.jpg">
+   <IMG src="m3.jpg">
+   <IMG src="m4.jpg">
+   <IMG src="m5.jpg">
+   <IMG src="m6.jpg">
+   <IMG src="m7.jpg">
+   <IMG src="m8.jpg">
+   <IMG src="m9.jpg">
+   <IMG src="m10.jpg">
+  </DIV>
+ </DIV>
+ </DIV>
+ </DIV>
+ 
+</DIV>
+
+
+</BODY>
+</HTML>

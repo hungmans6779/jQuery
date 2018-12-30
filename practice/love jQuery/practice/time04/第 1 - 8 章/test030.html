@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>無標題文件</title>
+<style type="text/css">
+<!--
+      .myS1{
+	    background-color:blue;
+		color:white;
+		font-family:Verdana, Arial, Helvetica, sans-serif;
+		font-size:20px;
+	  }
+-->
+</style>
+<script type="text/javascript" src="http://www.eztravel.com.tw/myresources/js/jquery-1.4.2.js" ></script>
+ <script language="javascript">
+ <!--
+   $(document).ready(function(){
+      $("#tt").click(function(){
+	     var str=$.trim($(":input[name='t1']").val());
+		 $(":input[name='t2']").val(str);
+	  }); 
+   });
+ -->
+ </script>
+</head>
+
+<body>
+  <input type="text" name="t1" value="     This is Trim    " /><br />
+  <input type="text" name="t2" class="myS1" /> <br />
+  <button id="tt" >過濾空白字元</button>
+</body>
+</html>

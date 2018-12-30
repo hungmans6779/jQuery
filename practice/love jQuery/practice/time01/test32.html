@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>無標題文件</title>
+  <style type="text/css">
+   <!--
+     .myTd1{
+	   background-color:#0033FF;
+	   color:white;
+	   text-align:center;
+	   font-size:.93em;	   	   
+	 }
+   -->
+  </style>
+  <script type="text/javascript" src="http://www.eztravel.com.tw/myresources/js/jquery-1.4.2.js" ></script>
+  <script language="javascript">
+  <!--
+    $(document).ready(function(){
+	  $("#ss").click(function(){
+	    $('tr:not(:visible)').addClass('myTd1').fadeIn('slow');
+	  });
+	  
+	  
+	  $("#hh").click(function(){
+	    $("table:visible").hide("slow");
+	  });
+	});
+  -->
+  </script>
+</head>
+
+<body>
+   <button id="ss">show all hide</button>
+   <button id="hh">hide all show</button>
+   <table border="1" align="center" width="200" >
+     <tr><td>td11</td><td>td12</td></tr>
+     <tr style="display:none"><td>td21</td><td>td22</td></tr>               
+     <tr><td>td31</td><td>td32</td></tr>
+     <tr><td>td41</td><td>td42</td></tr>
+   </table>
+ 
+</body>
+</html>

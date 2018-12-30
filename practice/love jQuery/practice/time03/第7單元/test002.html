@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=big5" />
+  <title>無標題文件</title>
+  <style type="text/css">
+  <!--
+      .myDiv{
+	     background-color:yellow;
+		 color:black;
+		 width:200px;
+		 font:90% Verdana, Arial, Helvetica, sans-serif;
+		 padding:5px 8px;		 		 
+	  }
+  -->
+  </style>
+  <script type="text/javascript" src="http://www.eztravel.com.tw/myresources/js/jquery-1.4.2.js" ></script>
+  <script language="javascript">
+  <!--
+        $(document).ready(function(){
+			var b;
+		    $.each($.browser,function(name,val){
+               if(name=="safari" &&  val==true)       { b="safari"; }
+			   else if(name=="opera" &&  val==true)   { b="opera"; }
+			   else if(name=="msie" &&  val==true)    { b="msie"; }
+			   else if(name=="mozilla" &&  val==true) { b="mozilla"; }			   
+			});
+			$("#dis").html(b);
+		});
+  -->
+  </script>
+</head>
+
+<body>
+  <div id="dis" class="myDiv"></div>
+</body>
+</html>

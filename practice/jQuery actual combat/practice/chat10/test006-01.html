@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>無標題文件</title>
+    <link type="text/css" rel="stylesheet" href="../../time01/chat10/default.css"  /> 
+    <link type="text/css" rel="stylesheet" href="../../time01/chat10/chat10.css"   /> 
+    <link type="text/css" rel="stylesheet" href="/myresources/js/jquery-ui-1.8rc3/themes/base/jquery-ui.css" />
+    
+	<script language="javascript" type="text/javascript" src="/myresources/js/jquery-1.4.2.js"></script>
+    <script lanugage="javascript" type="text/javascript" src="/myresources/js/jquery-ui-1.8rc3/ui/jquery-ui.js" ></script> 
+    <script language="javascript">
+	<!--
+	    jQuery.noConflict();
+       
+	    // 黑 -> 白 互換		
+		jQuery(document).ready(function($){
+          $('#color-animate').click(function(){
+			 $('div#mydiv').animate({
+			   color:'#fff',
+			   backgroundColor:'#000'
+			 },{
+			   duration:'slow',
+			   easing:'easeInQuart'
+			 });
+          });  
+		}); // end jQuery(document).ready(function($){
+		
+		
+		// 互換區塊的style
+		jQuery(document).ready(function($){
+		  $('#do-toggle').click(function(){
+		     $('#toggle-class').toggleClass('highlight','slow');
+		  }); // end $('#do-toggle').click(function(){
+		}); // end jQuery(document).ready(function(){
+		
+		
+		// 圖片爆炸方式展開 - 隱藏
+		jQuery(document).ready(function($){
+		   $('#do-explode').click(function(){
+			 //$('#explode').effect('explode',{pieces:25},800);
+			 $('#explode').hide('explode',{pieces:25},800);
+		   }); // end  $('#do-explode').click(function(){
+		}); // end jQuery(document).ready(function($){
+		
+		
+		
+		// sortable 的拖拉 
+		jQuery(document).ready(function($){
+		  $('#sort-container').sortable({
+		     opacity:.5,
+			 cursor:'move',
+			 axis:'y'
+		  }); // end $('#sort-container').sortable({
+		}); // end jQuery(document).ready(function($){
+		
+		
+		
+		jQuery(document).ready(function($){
+		
+		  $('#do-dialog').click(function(){
+		    
+		    $('#dlg').dialog();
+			
+		  }); // end $('#do-dialog').click(function(){
+		  
+		}); //end jQuery(document).ready(function($){
+	-->
+	</script>
+   
+  </head>
+
+  <body>
+  
+ <div id="container" >
+    
+    <h1>jQuery UI</h1>
+    <div class="ui">
+      <p><button id="color-animate">Color Animate</button></p>
+      <div id="mydiv">mydiv</div>      
+    </div>
+    
+    <div class="ui">
+      <p><button id="do-toggle">Toggle Class</button> </p>
+      <div id="toggle-class">toggleClass</div>
+    </div>
+    
+    <div class="ui">
+      <p><button id="do-explode">Explode</button> </p>
+      <div id="explode" >Explode</div>
+    </div>
+    
+    
+    <div class="ui">
+      <p><button id="do-dialog">Dialog</button> </p>
+      <div id="dlg">My Dialog</div>
+    </div>
+    
+    <div id="sortables">
+      <h3>Sortables</h3>
+      <ul id="sort-container">
+        <li>John</li>
+        <li>Paul</li>
+        <li>George</li>
+        <li>Ringo</li>
+        <li>Pete</li>
+        <li>Stu</li>
+      </ul>
+    </div>
+    
+ 
+  </div> <!-- end id="container" -->
+    
+  </body>
+  
+</html>

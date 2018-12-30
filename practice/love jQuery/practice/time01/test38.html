@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>無標題文件</title>
+  <style type="text/css">
+  <!--
+    .myS1{
+	  background-color:blue;
+	  font-family:"Courier New", Courier, monospace;
+	  color:white;
+	  text-align:center;	  
+	}
+	
+		
+	.myS2{
+	  background-color:red;
+	  font-family:Arial, Helvetica, sans-serif;
+	  color:white;
+	  text-align:center;
+	}
+  
+  
+  	.myS3{
+	  background-color:green;
+	  font-family:Arial, Helvetica, sans-serif;
+	  color:white;
+	  text-align:center;
+	}
+  
+  
+  -->
+  </style>
+  <script type="text/javascript" src="http://www.eztravel.com.tw/myresources/js/jquery-1.4.2.js" ></script>
+  <script language="javascript"  type="text/javascript">
+  <!--
+     $(document).ready(function(){
+	    
+		// change HREF HAVE "Y"
+		$('#b1').click(function(){
+          $('a[href*="Y"]').addClass('myS1');
+		  $('a:not([href*="Y"])').addClass('myS2');
+	    }); // end $('#b1').click(function(){
+		
+		
+		// change INFO HAVE "H"
+		$('#b2').click(function(){
+		  $('a:contains("H")').addClass('myS3');
+		}); // end $('#b2').click(function(){
+		
+		
+	 });  
+  -->
+  </script>
+</head>
+
+<body>
+ <button id="b1" >change HREF HAVE "Y"</button>
+ <button id="b2" >change INFO HAVE "H"</button>
+ <p>
+   <a href="../../../../Yahoo.com" >Yahoo</a>
+   <a href="../../../../eztravel.com.tw" >ezTravel</a>
+   <a href="../../../../hinet.net" >Hinet</a> 
+   <a href="../../../../kk.net" >Yam</a> 
+ </p>
+</body>
+</html>

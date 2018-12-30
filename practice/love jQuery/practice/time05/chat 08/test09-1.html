@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>無標題文件</title>
+<script type="text/javascript" src="http://www.eztravel.com.tw/myresources/js/jquery-1.4.2.js" ></script>
+<script language="javascript" >
+<!--
+     $(document).ready(function(){
+	   
+	      $(document).keydown(function(e){
+		  
+		    var keyCode=e!=null?e.which:event.keyCode;
+			
+			if(keyCode==27){
+			   $("#myForm").hide("slow",function(){
+			     alert("隱藏完畢.....");
+			   });
+			   
+			}
+			
+		  }); // end keydown
+		  
+	 });
+-->
+</script>
+</head>
+
+<body>
+  <form id="myForm" >
+    姓名：<input type="text" size="10"  value="kevin" /><br />
+    工作室：<input type="text" size="20"  value="超龍星工作室"  /><br />
+    <input type="button"  value="送出"  />
+  </form>
+</body>
+</html>

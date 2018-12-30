@@ -1,0 +1,77 @@
+//.................submit
+$('#myform').submit(function() {
+var myid=$('#myform :input[name=myid]').val();
+var mypw=$('#myform :input[name=mypassword]').val();
+	if (myid=="" || myid.length<=6)
+	{
+$('#iderror').html('Please Entry Again');
+$('#myform :input[name=myid]').select().focus();
+$('#myform :input[name=myid]').focus();
+return  false
+	}
+	if (mypw=="" || mypw.length<=6)
+	{
+$('#pwerror').html('Please Entry Again');
+$('#myform :input[name=mypassword]').select()
+$('#myform :input[name=mypassword]').focus();
+return false
+	}
+	else{
+		alert('Success');
+		return false
+	});
+
+
+
+
+
+
+
+
+
+
+
+	//..................id
+$('#myform :input[name=myid]').change(function() {
+var myid=$('#myform :input[name=myid]').val();
+if (myid=="")
+	{
+$('#iderror').html('Can Not Blank');
+$('#myform :input[name=myid]').select().focus();
+$('#myform :input[name=myid]').focus();
+return  false
+	}
+if (myid.length<=6)
+	{
+$('#iderror').html('Too Short');
+$('#myform :input[name=myid]').select()
+$('#myform :input[name=myid]').focus();
+return  false
+	}
+else{
+$('#iderror').empty();
+return  true
+};
+
+});
+//...................password
+$('#myform :input[name=mypassword]').change(function() {
+var mypw=$('#myform :input[name=mypassword]').val();
+if (mypw=="")
+	{
+$('#pwerror').html('Can Not Blank');
+$('#myform :input[name=mypassword]').select();
+$('#myform :input[name=mypassword]').focus();
+return false
+	}
+if (mypw.length<=6)
+	{
+$('#pwerror').html('Too Short');
+$('#myform :input[name=mypassword]').select()
+$('#myform :input[name=mypassword]').focus();
+return false
+	}
+else{
+$('#pwerror').empty();
+}
+});

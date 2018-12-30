@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>無標題文件</title>
+    <link type="text/css" rel="stylesheet" href="../../../time01/chat11/test002/test002.css"  />
+    <script language="javascript" type="text/javascript" src="/myresources/js/jquery-1.4.2.js"></script>
+    <script language="javascript" type="text/javascript" src="../../../time01/chat11/test002/jquery.myplugin.js"></script>
+    <script language="javascript">
+	  <!--
+         jQuery.noConflict();
+
+         jQuery(document).ready(function($){
+             
+		   jQuery.fn.swapClass=function(class1,class2){
+		     
+			 this.each(function(){
+				// alert('You called this method on '+this+' .');
+				alert($(this).text());
+			 });
+			 
+		   } // end jQuery.fn.swapClass=function(class1,class2){
+		   
+		   
+           $('#swap').click(function(){
+		     $('li').swapClass('this','that');
+			 return false;
+		   });  
+			 
+		 }); // end jQuery(document).ready(function($){
+		 
+	  -->
+	</script>
+  </head>
+
+  <body>
+    <ul>
+      <li>Lorem ipsum dolor sit amet</li>
+      <li class="this">Consectetur adipisicing elit</li>
+      <li>Sed do eiusmod tempor incididunt ut labore</li>
+      <li class="that">Magna aliqua</li>
+      <li class="this">Ut enim ad minim veniam</li>
+      <li>Quis nostrud exercitation ullamco</li>
+      <li>Laboris nisi ut aliquip ex ea commodo</li>
+      <li class="that">Duis aute irure dolor</li>
+    </ul>
+    <input type="button" value="Swap classes" id="swap" />
+  </body>
+</html>

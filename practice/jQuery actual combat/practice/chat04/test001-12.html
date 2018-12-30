@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>無標題文件</title>
+<link type="text/css" rel="stylesheet" href="chat04.css"  />
+<script language="javascript" src="/myresources/js/jquery-1.3.2.js"></script>
+<script language="javascript">
+<!--
+
+     jQuery.noConflict();
+	 
+	 
+
+	 
+	 jQuery(document).ready(function($){
+	
+	   $('p:eq(1)').hide();
+	   $('a.more').click(function(){
+		$("p:eq(1)").animate({
+		      opacity:'toggle',
+		      height:'toggle'
+		    },'slow');
+			
+		 var $link=$(this);
+		 if($link.text()=='read less'){
+		   $link.text('read more');
+		 }else{
+		   $link.text('read less');
+		 }
+		 
+		 return false;
+	   }); // end $('a.more').click(function()
+	   
+	 }); // end jQuery(document).ready(function($)
+	
+	
+	
+	 
+	 
+	 jQuery(document).ready(function($){
+	 		
+       var $speech=$('div.speech');
+	   var defaultSize=$speech.css('fontSize');
+	   $('#switcher .button').click(function(){
+		  var num=parseFloat($speech.css('fontSize'),10);
+		  switch(this.id){
+		    case 'switcher-default':
+               num=parseFloat(defaultSize,10);
+			   break;
+			case 'switcher-large':
+			   num*=1.4;
+			   break;
+			case 'switcher-small':
+			   num/=1.4;
+			   break;  
+		  } // end switch(this.id)
+		  
+		  $speech.animate({fontSize:num+'px'},'slow');
+	   }); // end $('switcher .button').click(function()
+	   
+	 }); // end jQuery(document).ready(function($)
+	 	 
+		 
+		 	 
+	 jQuery(document).ready(function($){
+
+        $('#switcher .label').click(function(){
+
+           var paraWidth=$('div.speech p').outerWidth();
+		   
+		   var $switcher=$(this).parent();
+		   var switcherWidth=$switcher.outerWidth();
+		   
+		   $switcher.fadeTo('fast',0.5)
+		            .animate({left:paraWidth-switcherWidth},{duration:'slow',queue:false})
+					.fadeTo('slow',1.0)
+					.slideUp('slow')
+					.slideDown('slow');
+		
+		}); // end $('#switcher label').click(function()
+
+	 }); // end  jQuery(document).ready(function($)
+	 
+	 
+-->
+</script>
+</head>
+
+<body>
+  <div id="container" >    
+  <h2>Abraham Lincoln's Gettysburg Address</h2>
+  <div id="switcher" >
+    <div class="label">Text Size</div>
+    <button class="button" id="switcher-default">Default</button>
+    <button class="button" id="switcher-large">Bigger</button>
+    <button class="button" id="switcher-small">Smaller</button>
+  </div>
+  <div class="speech">
+    <p>Fourscore and seven years ago our fathers brought forth on this continent a new nation, conceived in liberty, and dedicated to the proposition that all men   are created equal.        
+    </p>
+    <p>Now we are engaged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure. We are met on a great battlefield of that war. We have come to dedicate a portion of that field as a final resting-place for those who here gave their lives that the nation might live. It is altogether fitting and proper that we should do this. But, in a larger sense, we cannot dedicate, we cannot consecrate, we cannot hallow, this ground. 
+    </p>  
+    <a href="#" class="more" >read more</a>
+   </div> <!-- end class="speech" -->
+   </div> <!-- end id="container" -->
+  </body>
+</html>

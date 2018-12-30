@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=big5" />
+  <title>無標題文件</title>
+  <style type="text/css" rel="stylesheet" >
+  <!--
+    .forminput{
+	   border:3px solid #0000CC;
+	   font-family:Verdana, Arial, Helvetica, sans-serif;
+	   font-size:18px;	   
+	}
+	.labelinput{
+	   border:5px dotted #FF0000;
+	   font-family:Verdana, Arial, Helvetica, sans-serif;
+	   font-size:18px
+	}
+	
+	.onlyinput{
+	   background:#FFFF99;
+	}
+  -->
+  </style>
+  <script type="text/javascript" src="http://www.eztravel.com.tw/myresources/js/jquery-1.4.2.js" ></script>
+  <script language="javascript">
+  <!--
+      $(document).ready(function(){	     
+	     $("form input").addClass("forminput");
+		 $('label input').addClass("labelinput");
+		
+	  });
+  -->
+  </script>
+</head>
+
+  <body>
+    <font color='blue'>這是一個包含在form 表單的input 元件</font><br />
+    <form>
+	  <input type="text" name="t1" size="10" /><span style="margin-left:2em;"></span>  
+	  <input type="text" name="t2" size="10" /><span style="margin-left:2em;"></span>  
+	  <input type="text" name="t3" size="10" />
+	</form>
+	<br />
+	<hr />
+	
+	<label>
+	  <font color='red'>這是一個包含在label表單的input 元件</font><br />
+      <input type="text" name="t4" size="10" /><span style="margin-left:2em;"></span>  
+	  <input type="text" name="t5" size="10" />	  
+	</label>
+	<br />	<br />	<br />
+	<hr />
+	
+	<label><font color='green'>這是一個單純的input 元件</font></label><br />
+ 	 <input type="text" name="t6" size="10" />
+	
+  </body>
+</html>

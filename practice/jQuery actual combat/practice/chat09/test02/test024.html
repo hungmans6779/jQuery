@@ -1,0 +1,465 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+        "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Learning jQuery Fake Bookstore</title>
+  <link rel="stylesheet" href="styles/bookstore.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="styles/tables.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="styles/forms.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="styles/rotators.css" type="text/css" media="screen" />
+  <script language="javascript" src="/myresources/js/jquery-1.4.2.js"></script>
+  <script language="javascript" >
+    <!--
+         jQuery.noConflict();
+		 
+		 jQuery(document).ready(function($){
+		    
+	
+			var spacing=140;
+			$('#featured-books').css({
+			  'width':spacing*3,
+			  'height':'166px',
+			  'overflow':'hidden'
+			}).find('.covers a').css({
+			  'float':'none',
+			  'position':'absolute',
+			  'left':1000
+			});
+			
+			
+
+			var setUpCovers=function(event){
+			
+			  var $covers=$('#featured-books .covers a');
+			  $covers.unbind('click mouseenter mouseleave');
+			   
+			   
+			   
+			   		    // 處理上方的透視圖片(開始)
+			function createControl(src){
+			   return $('<img />').attr('src',src)
+			                      .addClass('control')
+								  .css('opacity',0.6)
+								  .css('display','none');
+			} // end function createControl(src){
+			
+		    var $leftRollover=createControl('images/left.gif'); 
+			var $rightRollover=createControl('images/right.gif');
+			var $enlargeRollover=createControl('images/enlarge.gif');
+			   
+			   
+			   
+			  // ************************************************************************************************** 
+			  // 點擊左邊的圖片時，則向右捲動
+			  $covers.eq(0).css('left',0)
+			               .click(function(event){
+				              $covers.eq(0).animate({'left':spacing},'fast');
+				              $covers.eq(1).animate({'left':spacing*2},'fast');
+				              $covers.eq(2).animate({'left':spacing*3},'fast');
+				              $covers.eq($covers.length-1)
+				                     .css('left',-spacing)
+					                 .animate({'left':0},'fast',function(){
+					                    $(this).prependTo('#featured-books .covers');
+						                setUpCovers();
+					                 });
+			
+				               event.preventDefault();
+			               }).hover(function(){
+			                  $leftRollover.appendTo(this).show();
+			               },function(){
+			                  $leftRollover.hide();
+			               });
+			  // **************************************************************************************************
+			
+			
+			
+			
+			
+			
+			  // **************************************************************************************************
+			  // 點擊右邊的圖片時，則向左捲動
+			  
+			  $covers.eq(2).css('left',spacing*2)
+			               .click(function(event){
+				              $covers.eq(0)
+				                     .animate({'left':-spacing},'fast',function(){
+					                    $(this).appendTo('#featured-books .covers');
+						                setUpCovers();
+					                 }); 
+					   
+				              $covers.eq(1).animate({'left':0},'fast');
+				              $covers.eq(2).animate({'left':spacing},'fast');
+				              $covers.eq(3).css('left',spacing*3)
+				                           .animate({'left':spacing*2},'fast');
+							 
+				                event.preventDefault();
+			               }).hover(function(){
+			                    $rightRollover.appendTo(this).show();
+			                  },function(){
+			                    $rightRollover.hide();
+			               }); 
+			  // **************************************************************************************************
+			
+			
+			
+			
+			
+			
+		
+		
+		
+			  // **************************************************************************************************
+			  // 中間的圖片
+			
+			  var $enlargeCover=$('<img />').addClass('enlarged')
+			                                .hide()
+				    		   		        .appendTo('body');
+			  
+              var $closeButton=createControl('images/close.gif').addClass('enlarged-control')
+			                                                    .appendTo('body');
+               
+
+
+              var $priceBade=$('<div />').addClass('enlarged-price')
+			                             .css('opacity',0.6)
+				  					     .css('display','none')
+									     .appendTo('body'); 
+
+              var $waitThrobber=$('<img />').attr('src','images/wait.gif')
+			                                .addClass('control')
+										    .css('z-index',4)
+										    .hide();
+
+
+			  
+			  		
+			  // 中間的圖片
+			  $covers.eq(1)
+			         .css('left',spacing)
+			         .click(function(event){
+ 
+                             $waitThrobber.appendTo(this).show();
+							 
+                             var startPos=$(this).offset();
+							 startPos.width=$(this).width();
+							 startPos.height=$(this).height();
+
+                             var endPos={};
+							 endPos.width=startPos.width*3;     
+							 endPos.height=startPos.height*3;
+							 endPos.top=100;
+							 endPos.left=($('body').width()-endPos.width)/2;
+					
+					 					
+							 var price=$(this).find('.price').text();
+														  
+							 $enlargeCover.attr('src',$(this).attr('href'))
+							             .css(startPos)
+										 .show();
+										 
+										 
+							 var performAnimation=function(){
+							  	 
+								 $waitThrobber.hide();
+										 
+								 $enlargeCover.animate(endPos,'normal',function(){
+										     $enlargeCover.one('click',function(){
+										       $closeButton.unbind('click').fadeOut();
+											   $priceBade.fadeOut();
+										       $enlargeCover.fadeOut(); 
+										     }); // end 	$enlargeCover.one('click',function(){ 
+															       
+							                 $closeButton.css({
+			                                   'left':endPos.left,
+			                                   'top':endPos.top   
+			                                 }).show()
+							                   .click(function(){
+							                     $enlargeCover.click();
+							                   });
+	
+						                     $priceBade.css({
+							                               'right':endPos.left,
+							                               'top':endPos.top
+							                            }).text(price).show();
+											
+										 });    // end .animate(endPos,'normal',function(){     
+										 
+										 
+                               } // end var performAnimate=function(){
+	  
+	                           if($enlargeCover[0].complete){
+							     performAnimation();
+							   }else{
+							     $enlargeCover.bind('load',performAnimation);
+							   }
+	  
+	            
+				         event.preventDefault();
+							  
+			          }).hover(function(){
+						  $enlargeRollover.appendTo(this).show();
+						},function(){
+					      $enlargeRollover.hide();
+					  });
+					  // **************************************************************************************************	   
+						   
+						   
+			}; // end  var setUpCovers=function(event){
+			
+			
+			
+			
+			
+			
+			setUpCovers();
+
+
+
+
+           
+
+
+			
+			
+			
+			
+			// 處理上方的透視圖片(結束)
+			
+			
+		 }); // end jQuery(document).ready(function($){
+		 
+    -->
+  </script>
+
+</head>
+<body>
+
+  <div id="wrapper">
+    <div id="branding">
+      <h1>Learning jQuery</h1>
+    </div>
+    <div id="container">
+      <div id="content">
+        <h2>The Learning jQuery Fake Bookstore</h2>
+        <p>Welcome to our fake bookstore. Feel free to browse through the site and pretend to buy books. We'll pretend to sell them to you.</p>
+        <p>While you're here we'd like to present to you our special offer: For a limited time only, you can click on anything you like in this site for free. That's right! You will not be charged one peso. So stop reading, and start clicking. You may be surprised by what you find.</p>
+      
+        <div id="featured-books">
+          <div class="covers">
+            <a href="images/covers/large/1847190871.jpg" title="Community Server Quickly">
+              <img src="images/covers/medium/1847190871.jpg" width="120" height="148" alt="Community Server Quickly" />
+              <span class="price">$35.99</span>            </a>
+            <a href="images/covers/large/1847190901.jpg" title="Deep Inside osCommerce: The Cookbook">
+              <img src="images/covers/medium/1847190901.jpg" width="120" height="148" alt="Deep Inside osCommerce: The Cookbook" />
+              <span class="price">$44.99</span>            </a>
+            <a href="images/covers/large/1847190979.jpg" title="Learn OpenOffice.org Spreadsheet Macro Programming: OOoBasic and Calc automation">
+              <img src="images/covers/medium/1847190979.jpg" width="120" height="148" alt="Learn OpenOffice.org Spreadsheet Macro Programming: OOoBasic and Calc automation" />
+              <span class="price">$35.99</span>            </a>
+            <a href="images/covers/large/1847190987.jpg" title="Microsoft AJAX C# Essentials: Building Responsive ASP.NET 2.0 Applications">
+              <img src="images/covers/medium/1847190987.jpg" width="120" height="148" alt="Microsoft AJAX C# Essentials: Building Responsive ASP.NET 2.0 Applications" />
+              <span class="price">$31.99</span>            </a>
+            <a href="images/covers/large/1847191002.jpg" title="Google Web Toolkit GWT Java AJAX Programming">
+              <img src="images/covers/medium/1847191002.jpg" width="120" height="148" alt="Google Web Toolkit GWT Java AJAX Programming" />
+              <span class="price">$40.49</span>            </a>
+            <a href="images/covers/large/1847192386.jpg" title="Building Websites with Joomla! 1.5 Beta 1">
+              <img src="images/covers/medium/1847192386.jpg" width="120" height="148" alt="Building Websites with Joomla! 1.5 Beta 1" />
+              <span class="price">$40.49</span>            </a>           </div>
+        </div>
+     
+     
+        
+        <h3>Code Demos</h3>
+        <p>All demos for Chapters 7 through 9 are contained within the bookstore directory. Here is a quick list to get you to the appropriate page within the fake bookstore site for each demo:</p>
+
+        <h4>Chapter 7: Table Manipulation (<a href="scripts/tables.js">scripts/tables.js</a>)</h4>
+        <ul>
+          <li><a href="books/index.html">Sorting and Paging</a></li>
+          <li><a href="news/index.html">Modifying table appearance</a> (row highlighting, tooltips,collapsing and expanding sections, filtering)</li>
+        </ul>
+        <h4>Chapter 8: Forms with Function (<a href="scripts/forms.js">scripts/forms.js</a>)</h4>
+          <ul>
+            <li><a href="contact/index.html">Improving a basic form</a> (progressively enhanced form styling, conditionally displayed fields, form validation, checkbox manipulation)</li>
+            <li>Compact forms (Placeholder text, AJAX auto-completion): search field on all pages</li>
+            <li><a href="cart/index.html">Working with numeric form data</a> (shopping cart, rejecting non-numeric input, numeric calculations, deleting items, editing shipping information)</li>
+          </ul>
+        <h4>Chapter 9: Shufflers and Rotators (<a href="scripts/rotators.js">scripts/rotators.js</a>)</h4>
+        <ul>
+          <li>Headline rotator: current page</li>
+          <li>Image carousel: current page</li>
+        </ul>
+      </div> <!-- end content -->
+      <div id="primary-nav">
+        <ul>
+          <li><a href="books/index.html">Books</a></li>
+          <li><a href="news/index.html">News</a></li>
+          <li><a href="contact/index.html">Contact</a></li>
+        </ul>    
+      </div>
+
+    </div>
+    <div id="secondary-nav">
+      <div class="cart">
+        <h3><a href="cart/index.html">Your Cart</a></h3>
+        <ul>
+          <li>Building Telephony Systems With Asterisk</li>
+          <li>Smarty PHP Template Programming and Applications</li>
+          <li>Creating your MySQL Database: Practical Design Tips and Techniques</li>
+          <li>Drupal: Creating Blogs, Forums, Portals, and Community Websites</li>
+        </ul>
+      </div>
+      <div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+    </div> 
+
+
+
+    <script language="javascript" >
+      <!--
+         jQuery.noConflict();
+		 
+		 jQuery(document).ready(function($){
+		    
+			$('#news-feed').each(function(){
+			   var $container=$(this);
+			   $container.empty();
+			   
+			   var fadeHeight=$container.height()/4;
+			
+			   for(var yPos=0;yPos<fadeHeight;yPos+=2){
+			     
+				 $('<div></div>').css({
+				    opacity:yPos/fadeHeight,
+					top:$container.height()-fadeHeight+yPos
+				 }).addClass('fade-slice')
+				   .appendTo($container); 
+			   } // end for(var yPos=0;yPos<fadeHeight;yPos+=2){
+			   
+			   
+	           var $loadingIndicator=$('<img></img>')
+			                           .attr({
+			                                 'src':'images/loading.gif',
+											 'alt':'Loading. Please wait.'
+			                           })
+									   .addClass('news-wait')
+									   .appendTo($container)
+			   
+			   
+			   $.get('feed.xml',function(data){
+			     
+				 $loadingIndicator.remove();
+				 
+				 $('rss item',data).each(function(){
+				 
+					var $link=$('<a></a>').attr('href',$('link',this).text())
+					                      .text($('title',this).text());
+						
+					var $headline=$('<h4></h4>').append($link);
+                    
+                    var pubDate=new Date($('pubDate',this).text());
+					var pubYear=pubDate.getFullYear();
+					var pubMonth=pubDate.getMonth()+1;
+					var pubDay=pubDate.getDate();
+					
+					
+					var $publication=$('<div></div>').addClass('publication-date')
+					                                 .text(pubMonth+"/"+pubDay+"/"+pubYear);
+									
+													 
+                    var $description=$('<div></div>').addClass('summary')
+					                                 .html($('description',this).text());
+
+
+
+                    $('<div></div>').addClass('headline')
+					                .append($headline,$publication,$description)
+					                .appendTo($container);		
+										
+				 }); // end  $('rss item',data).each(function(){
+				 
+				  
+				  
+				  var currentHeadline=0,oldHeadline=0;
+				  var hiddenPosition=$container.height()+10;
+				  $('div.headline').eq(currentHeadline).css('top',0);
+				  var headlineCount=$('div.headline').length;
+				  var pause;
+				  var rotateInProcess=false;
+				  var headlineRotate=function(){
+				    if(!rotateInProcess){
+					 rotateInProcess=true;
+					 pause=false;
+				     currentHeadline=(oldHeadline+1)%headlineCount;
+					 
+					  // 隱藏某一標題資訊
+					 $('div.headline').eq(oldHeadline)
+					                  .animate({top:-hiddenPosition},'slow',function(){
+									     $(this).css('top',hiddenPosition);
+									   }); // end  $('div.headline').eq(oldHeadline)
+									  
+							
+					 // 顯示某一標題資訊				  
+	                 $('div.headline').eq(currentHeadline)
+					                   .animate({top:0},'slow',function(){
+									      rotateInProcess=false;
+										  if(!pause){
+									        pause=setTimeout(headlineRotate,5000);
+										  }	
+									   });
+				                    											   								 
+					 oldHeadline=currentHeadline;
+					} // end if(!rotateInProcess) 
+				  }; // end headlineRotate=fuction 
+				
+				   if(!pause){
+				     pause=setTimeout(headlineRotate,5000);
+				   }
+				 
+				   $('#news-feed').hover(function(){
+				      clearTimeout(pause);
+					  pause=false;
+				   },function(){
+				      if(!pause){
+				        pause=setTimeout(headlineRotate,5000);
+				      }		
+				   });
+				 
+			   }); // end $.get('feed.xml',function(data){
+			   
+			}); // end $('#news-feed').each(function()
+			
+		 }); // end jQuery(document).ready(function($){
+		 
+      -->
+    </script>
+
+
+
+    <div id="sidebar">
+      <h2>Sidebar</h2>
+      <div>
+        <form id="search" action="search/index.php" method="get" accept-charset="utf-8" >
+          <label for="search-text">search the site</label>
+          <input type="text" name="search-text" id="search-text" />
+        </form>
+      </div>
+      
+      <h3>Recent News</h3>
+      <div id="news-feed">
+        <a href="news/index.html">News Releases</a>      </div>
+    </div> <!-- end sidebar -->
+
+
+
+
+    <div id="footer">
+      This is the footer.
+    </div><br>
+
+
+  </div> <!-- end wrapper -->
+
+</body>
+</html>

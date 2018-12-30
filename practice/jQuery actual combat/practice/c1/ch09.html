@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>無標題文件</title>
+    <script type="text/javascript" language="javascript" src="/myresources/js/jquery-1.4.2.js" ></script>
+    <script language="javascript">
+	<!--
+	
+	    jQuery.noConflict();
+		
+        jQuery.fn.print=function(message){
+	      return this.each(function(){
+		    jQuery('<div class="result" />').text(String(message))
+			                                .appendTo(jQuery(this).find('div.results'));
+		  }); // end return this.each(function(){
+		}; // end jQuery.fn.print=function(){
+
+
+	    jQuery(document).ready(function($){
+		
+		   var readyVar=0;
+		   function outFn(){
+		      readyVar++;
+			  $('#example-9').print(readyVar);
+		   }; // end function outFn(){
+		   
+		   outFn();
+		   outFn();
+		   
+		}); // end $(document).ready(function(){
+	-->
+	</script>
+  </head>
+
+  <body>
+    <div id="example-9">
+      <h3>Example-9</h3>
+      <div class="results"></div>
+    </div>
+  </body>
+
+</html>

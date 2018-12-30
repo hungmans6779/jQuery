@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>無標題文件</title>
+    <script language="javascript" type="text/javascript" src="/myresources/js/jquery-1.4.2.js" ></script>
+    <script language="javascript">
+	<!--
+	    
+		jQuery.fn.print=function(message){
+		
+		   return this.each(function(){
+			 $('<div id="result" />').text(String(message))
+			                         .appendTo($(this).find('div.results'));
+		   }); // end  return this.each(function(){
+		  
+		}; // end jQuery.fn.print=function(message){
+		
+		
+		$(document).ready(function(){
+		 
+		    function outerFn(){
+			  $('#example-4').print('outerFn');
+			  function innerFn(){
+			    $('#example-4').print('innerFn');
+			  }; // end function innerFn(){
+			  return innerFn;
+			}; // end function outerFn(){
+		
+		
+		    $('#example-4').print('var fnRef = outerFn()');
+			var fnRef=outerFn();
+			$('#example-4').print('fnRef()');
+			fnRef();
+			
+		
+		}); // end $(document).ready(function(){
+		
+	-->
+	</script>
+  </head>
+
+  <body> 
+  
+    <div id="example-4">
+      <h3>Example4</h3>
+      <div class="results"></div>
+    </div>
+  
+  </body>
+  
+  
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Jquery</title>	
+<script type="text/javascript" src="../jquery-1.2.1.pack.js"></script>
+<script type="text/javascript" src="ajax1.js"></script>
+<style>
+html
+{	background-color:black;
+	font:70% Verdana; color:#ACACB0
+}
+img {border:none}
+#gform{width:400px; padding:23px 15px 20px 27px; background:url(0001.gif) #83b830 no-repeat}
+#gform h3{margin:0 0 0.5em; color:#fff;font:100% Verdana;}
+#gform fieldset{width:327px; border:none; background:url(0002.gif) #a4dc4b 0 -4px no-repeat; padding:0.4em 0 0}
+#gform fieldset legend{display:none}
+#gform fieldset div.y{padding:2px 0 3px; color:black;text-align:left}
+#gform fieldset div.x{clear:both; padding:10px 0 3px; background:url(0002.gif) no-repeat; color:black;text-align:left}
+#gform fieldset div.z{border-top:2px solid #6a9c1d; background:url(b2.gif) #83b830 308px 100% no-repeat; padding:0 19px 0 0; text-align:right}
+#gform fieldset div label{float:left;  width:100px; font-size:1.1em; color:#457101; font-weight:bold; padding:2px 0 0 10px}
+#gform fieldset div.y input{background:#A4DC4B; width:150px; font-size:11px; padding:2px; border-top-style:none; border-bottom:1px dotted black; border-right-style:none; border-left-style:none}
+#s0r_form fieldset div select{width:178px; font-size:1em; padding:2px; border:1px solid #7f9db9}
+#s0r_form fieldset div textarea{width:233px; height:134px; font:10px/15px Verdana,Arial,Helvetica,sans-serif; padding:1px 2px; overflow:auto; margin:0 0 4px}
+
+#gform fieldset div.z span{background:url(point.gif) 0 50% no-repeat; padding:0 0 0 15px}
+#gform fieldset div.z span input{width:auto; background:url(b1.gif) #6a9c1d 0 100% no-repeat; border:none; padding:1px 8px 4px 13px; font:70% Verdana; font-size:1.1em; color:#fff; font-weight:bold}
+
+.myblock{
+height:100%;
+background-color:gray;
+z-index:1000;
+position: absolute;
+top:0;
+left:0;
+padding:100px 0px 0px 0px;
+color:white;
+text-align:center
+}
+</style>
+
+</HEAD>
+ 
+<body>
+<div align=center>
+<div id="gform" >
+				<h3>會員加入 *為必填欄位</h3>
+<form id=myform method=post>
+<fieldset>
+	<legend>Please Login </legend>
+	<div class="y"><label >姓名</label> <input type="text" value="" name="myname" rel="3" class=required alias='姓名'></div>
+		<div class="y"><label >暱稱</label> <input type="text" value="" name="nick" class=required alias='暱稱'></div>
+		<div class="y"><label >電子信箱</label> <input type="text" value="" name="email"  class=required alias='電子信箱'></div>
+		<div class="y"><label >自設登錄帳號</label> <input type="text" value="" name="id" rel="7" class=required alias='自設登錄帳號'></div>
+		<div class="y"><label >自設登錄密碼</label> <input type="password" value="" name="password" rel="7" class=required alias='自設登錄密碼'></div>
+		<div class="y"><label >確認登錄密碼</label> <input type="password" value="" name="chkpassword" rel="7" class=required alias='確認登錄密碼' ></div>
+		<div class="y"><label >電話</label> <input type="text" value="" name="telephone" alias='電話'></div>
+	<div class="x"><label >性別</label> <input type="radio" value="男" name="sexual" checked alias='性別'>男<input type="radio" value="女" name="sexual" alias='性別'>女</div>
+	<div class="x"><label >電子報訂閱</label> <input type="checkbox" value="消費指南" name="cc" alias='電子報訂閱'>消費指南<input type="checkbox" value="瘋電玩" name="cc" alias='電子報訂閱'>瘋電玩</div>
+	<div class="x" ><label >區域</label><select name=zone alias='區域'><option value='台北' selected alias='台北'>台北</option><option value='高雄' alias='高雄'>高雄</option></select></div>
+	<div class="z"><span><input type="submit" value="Join" name=ss></span></div>
+</fieldset>
+</form>			
+		</div>
+		</div>
+
+</body>
+</html>
+ 

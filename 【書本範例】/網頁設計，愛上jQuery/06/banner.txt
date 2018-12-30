@@ -1,0 +1,89 @@
+<!-------JavaScriptBANNER效果(一) START-------->
+  <span id="imgcontainer1" style="position: absolute; left: 100; top: -65; width: 468; height: 19; z-index: 1"></span> 
+  <span id="imgcontainer2" style="position: absolute; left: 100; top: -37; width: 469; height: 25; z-index: 2"></span> 
+  <script>
+<!-- Beginning of JavaScript -
+
+var imgwidth=468 //設定BANNER長
+var imgheight=60 //設定BANNER高
+var pos_left=150 //設定BANNER左距
+var pos_top=50   //設定BANNER頂距
+var imgname=new Array()
+imgname[0]="banner2_ss_ss1.gif"
+imgname[1]="banner46860_ss.gif"
+
+var imgurl=new Array()
+imgurl[0]="http://www.9w2u.com"
+imgurl[1]="http://www.9w2u.com"
+
+var imgpreload=new Array()
+for (i=0;i<=imgname.length-1;i++) {
+	imgpreload[i]=new Image()
+	imgpreload[i].src=imgname[i]
+}
+
+var pause=2000
+var speed=10
+var step=9 //設定數字請能整除圖長
+var i_loop=0
+var i_image1=0
+var i_image2=1
+
+
+function stretchimage() {
+	if (i_loop<=imgwidth) {
+		if (document.all) {
+			imgcontainer1.innerHTML="<a href='"+imgurl[i_image1]+"' target='_blank'><img width='"+i_loop+"' height='"+imgheight+"' src='"+imgname[i_image1]+"' border='0'></a>"
+			document.all.imgcontainer2.style.posLeft=document.all.imgcontainer1.style.posLeft+i_loop
+			
+			imgcontainer2.innerHTML="<a href='"+imgurl[i_image2]+"' target='_blank'><img width='"+(imgwidth-i_loop)+"' height='"+imgheight+"' src='"+imgname[i_image2]+"' border='0'></a>"
+		}
+		i_loop=i_loop+step
+		var timer=setTimeout("stretchimage()",speed)
+  	}
+	else {
+		clearTimeout(timer)
+		changeimage()
+	}
+}
+
+function changeimage() {
+	i_loop=0
+	i_image1++
+	if (i_image1>imgname.length-1) {i_image1=0}
+	i_image2=i_image1-1
+	if (i_image2>imgname.length-1) {i_image2=0}
+	if (i_image2<0) {i_image2=imgname.length-1}
+	
+	document.all.imgcontainer2.style.posLeft=document.all.imgcontainer1.style.posLeft
+   	var timer=setTimeout("stretchimage()",pause)
+}
+
+function initiate() {
+	if (document.all) {
+		document.all.imgcontainer1.style.posLeft=pos_left
+		document.all.imgcontainer2.style.posLeft=pos_left
+		document.all.imgcontainer1.style.posTop=pos_top
+		document.all.imgcontainer2.style.posTop=pos_top
+		changeimage()
+	}
+	if (document.layers) {
+		document.imgcontainer1.left=pos_left
+		document.imgcontainer2.left=pos_left
+		document.imgcontainer1.top=pos_top
+		document.imgcontainer2.top=pos_top
+		rotatenetscape()
+	}
+}
+
+function rotatenetscape() {
+	document.imgcontainer1.document.write("<a href='"+imgurl[i_image1]+"' target='_blank'><img src='"+imgname[i_image1]+"' border='0'></a>")	
+	document.imgcontainer1.document.close()	
+	i_image1++
+	if (i_image1>imgname.length-1) {i_image1=0}
+   	var timer=setTimeout("rotatenetscape()",pause*2)
+}
+
+// - End of JavaScript - -->
+</script>
+<!-------JavaScriptBANNER效果(一) END-------->

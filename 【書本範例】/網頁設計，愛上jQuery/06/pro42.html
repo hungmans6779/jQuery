@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>Jquery</title>	
+<script type="text/javascript" src="../jquery-1.2.1.pack.js"></script>
+<script type="text/javascript" src="pro42.js"></script>
+<style>
+html
+{	background-color:black;
+	font:70% Verdana; color:#ACACB0
+}
+#gform{width:400px; padding:23px 15px 20px 27px; background:url(0001.gif) #83b830 no-repeat}
+#gform h3{margin:0 0 0.5em; color:#fff;font:100% Verdana;}
+#gform fieldset{width:327px; border:none; background:url(0002.gif) #a4dc4b 0 -4px no-repeat; padding:0.4em 0 0}
+#gform fieldset legend{display:none}
+#gform fieldset div.y{padding:2px 0 3px; color:black}
+#gform fieldset div.x{clear:both; padding:10px 0 3px; background:url(0002.gif) no-repeat; color:black}
+#gform fieldset div.z{border-top:2px solid #6a9c1d; background:url(b2.gif) #83b830 308px 100% no-repeat; padding:0 19px 0 0; text-align:right}
+#gform fieldset div label{float:left;  width:100px; font-size:1.1em; color:#457101; font-weight:bold; padding:2px 0 0 10px}
+#gform fieldset div input{background:#A4DC4B; width:150px; font-size:11px; padding:2px; border-top-style:none; border-bottom:1px dotted black; border-right-style:none; border-left-style:none}
+#gform fieldset div.z span{background:url(point.gif) 0 50% no-repeat; padding:0 0 0 15px}
+#gform fieldset div.z span input{width:auto; background:url(b1.gif) #6a9c1d 0 100% no-repeat; border:none; padding:1px 8px 4px 13px; font:70% Verdana; font-size:1.1em; color:#fff; font-weight:bold}
+.inputstyle
+{
+background-color:black;
+font:70% Arial; color:#ACACB0;
+color:white
+}
+
+</style>
+
+</HEAD>
+ 
+<body>
+<div align=center>
+<div id="gform" >
+				<h3>發表您的言論</h3>
+<form id=myform method=post>
+<fieldset>
+	<legend>Please Login </legend>
+	<div class="y"><label >ID</label> <input type="text" value="" name="myid" ><br><span id=iderror></span></div>
+	<div class="x"><label >密碼</label> <input type="password" value="" name="mypassword" ><br><span id=pwerror></span></div>
+	<div class="x" id=message><label >留言</label><textarea name="message" rows="2" cols="20" id="textarea" disabled></textarea><br><span id=mserror></span></div>
+	<div class="z"><span><input type="submit" value="Login" name=ss></span></div>
+</fieldset>
+</form>			
+		</div>
+		</div>
+
+</body>
+</html>
+ 

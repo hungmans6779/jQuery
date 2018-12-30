@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>無標題文件</title>
+    <script type="text/javascript" language="javascript" src="/myresources/js/jquery-1.4.2.js"></script>
+    <script language="javascript">
+	<!--
+	    jQuery.fn.print=function(message){
+		
+		   return this.each(function(){
+		     $('<div class="result" />').text(String(message))
+			                            .appendTo($(this).find('div.results'));
+		   }); // end return this.each(function(){
+		
+		}; // end jQuery.fn.print=function(message){
+	
+	
+	
+        $(document).ready(function(){
+	      
+		   var globVar;
+		   
+		   function outerFn(){   
+		     $('#example-3').print('outer function');
+			 function innerFn(){
+			   $('#example-3').print('inner function');
+			 }; // end function innerFn(){
+			 
+			 globVar=innerFn;
+		   }; // end function outerFn(){  
+		
+		   outerFn(); // 一定要先呼叫才能產生globVar
+		   globVar();
+		   $('#example-3').print('outerFn()');
+		
+		
+		}); // end $(document).ready(function(){
+	-->
+	</script>
+  </head>
+
+  <body>
+    
+    <div id="example-3">
+      <h3>Example-3</h3>
+      <div class="results"></div>
+    </div>
+
+  </body>
+
+</html>

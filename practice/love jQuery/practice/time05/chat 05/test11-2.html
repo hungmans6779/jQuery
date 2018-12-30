@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>無標題文件</title>
+<style type="text/css">
+<!--
+
+	.myTh1{
+	  background-color:#990000;
+	  color:white;
+	}
+	
+    .myTd1{
+	  background-color:#339966;
+	  color:white;
+	}
+
+
+	.myTh2{
+	  background-color:#0000CC;
+	  color:white;
+	}
+	
+    .myTd2{
+	  background-color:#CCCC00;
+	  color:white;
+	}
+
+
+-->
+</style>
+<script type="text/javascript" src="http://www.eztravel.com.tw/myresources/js/jquery-1.4.2.js" ></script>
+<script language="javascript">
+<!--
+
+   $(document).ready(function(){
+
+     $("#ta1 tr:not(:has(td))").addClass("myTh1");
+     $("#ta1 tr:has(td)").addClass("myTd1");
+	 
+   
+     $("#ta2 tr:has(th)").addClass("myTh2");
+	 $("#ta2 tr:not(:has(th))").addClass("myTd2");
+  
+     $("#a1").click(function(){
+	    $("#ta2").animate({left:'+500px'},1000);
+	 });
+     
+   });
+   
+-->
+</script>
+</head>
+
+<body>
+  <a href="#" id="a1">Move</a>
+  <table width="200" id="ta1" border="1"  >
+    <tr><th>01</th><th>02</th></tr>
+    <tr><td>11</td><td></td></tr>
+    <tr><td></td><td>22</td></tr>
+    <tr><td>31</td><td>32</td></tr>
+  </table>
+  <br />
+  <table width="150" id="ta2" border="1" style="position:absolute" >
+    <tr><th>01</th><th>02</th></tr>
+    <tr><td>11</td><td></td></tr>
+    <tr><td></td><td>22</td></tr>
+    <tr><td>31</td><td>32</td></tr>
+  </table>
+</body>
+</html>

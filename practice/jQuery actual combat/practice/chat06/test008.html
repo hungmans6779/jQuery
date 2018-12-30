@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>無標題文件</title>
+    <link  type="text/css" rel="stylesheet" href="chat06.css"  />
+    <script type="text/javascript" language="javascript" src="/myresources/js/jquery-1.3.2.js"></script>
+    <script type="text/javascript" language="javascript">
+	  <!--
+
+		   jQuery(document).ready(function(){
+		     
+			 
+			$('#letter-a a').click(function(){
+			  $("#dictionary").load('a.html');	   
+			  return false;
+			}); // end $('#letter-a a').click(function() 			 
+			 
+			 
+			 
+			 
+			 
+			$('#letter-b a').click(function(){
+		       $('#dictionary').empty();
+		       $.getJSON('b.json',function(data){
+			      
+				  $.each(data,function(ertryIndex,entry){
+
+				     var html='<div class="entry">';
+					     html+='<h3 class="term">'+entry['term']+'</h3>';
+					     html+='<div class="part">'+entry['part']+'</div>';
+					     html+='<div class="definition">';
+						 html+=entry['definition'];
+						
+						 if(entry['quote']){
+						   html+='<div class="quote">';
+						   $.each(entry['quote'],function(lineIndex,line){
+						     html+='<div class="quote-line">'+line+'</div>';
+						   }); // end  $.each(entry['quote'],function(lineIndex,line)
+						   if(entry['author']){
+						     html+='<div class="quote-author">'+entry['author']+'</div>';
+						   }
+						   html+='</div>';  // end class="quote"
+						 } // end if(entry['quote'])
+						 
+						 html+='</div>'; // end  class="definition"
+					     html+='</div>'; // end class="entry"
+					 
+				     $('#dictionary').append(html);
+					 
+				  }); // end $.each(data,function(index,entry)
+				  
+			   });
+			   return false;
+			}); // end $('#letter-b a').click(function()
+
+
+
+			 
+			$('#letter-c a').click(function(){
+		       $('#dictionary').empty();
+			   $.getScript('c.js');
+			   return false;  
+			}); // end $('#letter-c a').click(function()
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 $('#letter-d a').click(function(){
+			     $('#dictionary').empty();
+			     $.get('d.xml',function(data){
+				   
+				   $(data).find('entry:has(quote[author])').each(function(){
+				      
+					  var $entry=$(this);
+					  var html='<div class="entry">';
+					  html+='<h3 class="term">'+$entry.attr("term")+'</h3>';
+					  html+='<div class="part">'+$entry.attr("part")+'</div>';
+					  html+='<div class="definition">';
+				      html+=$entry.find('definition').text();
+					  
+					  var $quote=$entry.find('quote');	  
+              		  if($quote.length){
+					    html+='<div class="quote">';
+						$quote.find('line').each(function(){
+						  html+='<div class="quote-line">'+$(this).text()+'</div>';
+						}); // end $quote.find('line').each(function()
+						if($quote.attr('author')){
+						  html+='<div class="quote-author">'+$quote.attr('author')+"</div>";
+						}
+						html+="</div>";  // end class="quote"
+					  } // end if($quote.length)	  
+					  html+='</div>';   // end class="definition"
+					  html+='</div>';  // end class="entry"
+					  
+					  $('#dictionary').append(html);
+				   }); // end $(data).find('entry').each(function)()
+				 }); // end $.get('d.xml',function(data)
+			 }); // end  $('#letter-d a').click(function()
+			 
+		
+		
+		     $('#letter-e a').click(function(){
+              
+			   // GET 的呼叫方式
+			   //$.get('http://3w.eztravel.com.tw/jQuery/chat6-1.jsp',{'term':$(this).text()},function(data){
+			   //  $('#dictionary').html(data);
+			   //}); // end $.get('e.php',{'term':$(this).text()},function(data)
+			   
+			   // POST 的呼叫方式
+			   $('#dictionary').load('http://3w.eztravel.com.tw/jQuery/chat6-1.jsp',{'term':$(this).text()});
+			   
+			   return false;
+			   
+			 }); // end $('#letter-e a').click(function()
+		
+			 
+			 
+			 $('#letter-f form').submit(function(){
+			 
+			   // GET 方法 一
+			   //$('#dictionary').load('http://3w.eztravel.com.tw/jQuery/chat6-1.jsp',{'term':$('input[name="term"]').val()} );
+
+			   // GET 方法 二
+               //$('#dictionary').load('http://3w.eztravel.com.tw/jQuery/chat6-1.jsp',$(this).serialize() );			   
+			   
+			   
+			   // POST 方法 一
+			   // $.get('http://3w.eztravel.com.tw/jQuery/chat6-1.jsp',{'term':$('input[name="term"]').val()},function(data){
+			   //   $('#dictionary').html(data);
+			   // });
+			    
+				
+			   // POST 方法 二
+			   $.get('http://3w.eztravel.com.tw/jQuery/chat6-1.jsp',$(this).serialize(),function(data){
+			     $('#dictionary').html(data);
+			   });
+			   
+			   return false;
+			   
+			 }); // end  $('#letter-f a').click(function()
+	
+			 
+		   }); // end jQuery(document).ready(function($){
+		   
+		   
+		   jQuery(document).ready(function($){
+		   
+		     $('<div id="loading" >Loading...</div>')
+			      .insertBefore('#dictionary')
+			      .ajaxStart(function(){
+				     $(this).show();
+				  }).ajaxStop(function(){
+				     $(this).hide();
+				  });
+			 
+			 //$('#dictionary').before('<div id="loading" >Loading...</div>');
+			 
+			 
+			 
+		   }); // end jQuery(document).ready(function($)
+		   
+		   
+	  -->
+	</script>
+  </head>
+
+  <body>
+  
+    <div id="container">
+      
+      <div id="header">
+        <h2>The Devil's Dictionary</h2>
+        <div class="author">by Ambrose Bierce</div>
+      </div>
+      
+      
+      <div class="letters">
+        <div class="letter" id="letter-a">
+          <h3><a href="#">A</a></h3>
+        </div>
+        <div class="letter" id="letter-b">
+          <h3><a href="#">B</a></h3>
+        </div>
+        <div class="letter" id="letter-c">
+          <h3><a href="#">C</a></h3>
+        </div>
+        <div class="letter" id="letter-d">
+          <h3><a href="#">D</a></h3>
+        </div>   
+        
+        <div class="letter" id="letter-e">
+          <h3>E</h3>
+          <ul>
+            <li><a href="#">Eavesdrop</a></li>
+            <li><a href="#">Edible</a></li>
+            <li><a href="#">Education</a></li>
+            <li><a href="#">Eloquence</a></li>
+            <li><a href="#">Elysium</a></li>
+            <li><a href="#">Emancipation</a></li>
+            <li><a href="#">Emotion</a></li>
+            <li><a href="#">Envelope</a></li>
+            <li><a href="#">Envy</a></li>
+            <li><a href="#">Epitaph</a></li>
+            <li><a href="#">Evangelist</a></li>
+          </ul>
+        </div>
+        
+        
+        <div clas="letter" id="letter-f" >
+          <h3>F</h3>
+          <form>
+            <input type="text"   name="term"   value=""        id="term"   />
+            <input type="submit" name="search" value="search"  id="search" />
+          </form>  
+        </div>
+        
+               
+      </div><!-- end id="letters" -->
+
+      
+      
+      <div id="dictionary">
+      
+      </div><!-- end id="dictionary" -->
+      
+      
+    </div><!-- end id="container" -->
+  </body>
+  
+</html>

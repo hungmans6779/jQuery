@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>無標題文件</title>
+<script type="text/javascript" src="http://www.eztravel.com.tw/myresources/js/jquery-1.4.2.js" ></script>
+<script language="javascript">
+<!--
+
+     $(document).ready(function(){
+
+        var b;        
+		$.each($.browser,function(name,val){
+		   if(name=='safari' && val==true ){ b="小叮噹"; }
+		   else if(name=='opera' && val==true){ b="小丸子"; }
+		   else if(name=='msie' && val==true) { b="亂太郎";  }
+		   else if(name=='mozilla' && val==true){ b="黑傑克";  }
+	       else{}
+		}); // end $.each....
+	   $("#dis").html(b);
+	 }); // end $(document).ready(function()
+ 	 
+	 
+-->
+</script>
+</head>
+
+<body>
+  <div id="dis" style="background-color:blue;color:white"></div>
+</body>
+</html>

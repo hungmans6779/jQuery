@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>無標題文件</title>
+  <style type="text/css">
+  <!--
+     .myTd{
+	   background-color:blue;
+	   color:white;
+	 }
+  -->
+  </style>
+<script type="text/javascript" src="http://www.eztravel.com.tw/myresources/js/jquery-1.4.2.js" ></script>
+<script language="javascript" >
+<!--
+
+    $(document).ready(function(){
+	
+	   // 顯示
+	   $("#b1").click(function(){
+	     $("tr:not(:visible)").addClass("myTd").fadeIn("slow",function(){
+	       alert("顯示完成");  
+	     });
+	   });
+		 
+		 
+	   // 顯示(第二種寫法)
+	   $("#b2").click(function(){
+	     $("tr:hidden").addClass("myTd").fadeIn("slow",function(){
+		   alert("顯示(第二種寫法)");
+		 });
+	   });	
+		
+		 
+	   // 隱藏 
+	   $("#b3").click(function(){
+         // $("table:visible").hide("slow");
+		 $('table:not(:hidden)').hide('slow');
+	   });	 
+		 
+		
+	   // 隱藏(第二種寫法)
+	   $("#b4").click(function(){
+	     $("#ta1:visible").fadeOut("slow",function(){
+		   alert("隱藏(第二種寫法)");
+		 });
+	   });	 
+		 
+		 
+	});
+	
+-->
+</script>
+</head>
+
+<body>
+   <button id="b1" >顯示</button>  |  
+   <button id="b2" >顯示(第二種寫法)</button>  |  
+   <button id="b3" >隱藏</button>  |  
+   <button id="b4" >隱藏(第二種寫法)</button>
+   <br /><br />
+    <table width="200" id="ta1" border="1" >
+    <tr><th>01</th><th>02</th></tr>
+    <tr style="display:none" ><td>11</td><td></td></tr>
+    <tr><td></td><td>22</td></tr>
+    <tr><td>31</td><td>32</td></tr>
+  </table>
+</body>
+</html>

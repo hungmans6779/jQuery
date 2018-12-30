@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>無標題文件</title>
+<style type="text/css">
+<!--
+    .myTdEmpty{
+	  background-color:#339966;
+	  color:white;
+	}
+	
+	
+	.myDivEmpty{
+	  background-color:#990000;
+	  color:white;
+	}
+	
+	.myMore{
+	  background-color:red;
+	  color:white;
+	}
+ 
+-->
+</style>
+<script type="text/javascript" src="http://www.eztravel.com.tw/myresources/js/jquery-1.4.2.js" ></script>
+<script language="javascript">
+<!--
+
+   $(document).ready(function(){
+     
+	  $("div:empty").addClass("myDivEmpty");
+	  $("td:not(:empty)").addClass("myMore");
+	  $("td:empty").addClass("myTdEmpty").html("N/A");  
+   });
+   
+-->
+</script>
+</head>
+
+<body>
+  <div>有內容的Div</div>
+  
+  以下是一個空白Div 的範例
+  <div style="height:20px;width:30%" ></div>
+  <br />
+  <table border="1" width="30%" >
+    <tr><td>01</td><td>02</td></tr>
+    <tr><td>11</td><td></td></tr>
+    <tr><td></td><td>22</td></tr>
+    <tr><td>31</td><td>32</td></tr>
+  </table>
+</body>
+</html>

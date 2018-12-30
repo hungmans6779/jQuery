@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>無標題文件</title>
+<style type="text/css">
+<!--
+     .myDiv{
+	   background-color:green;
+	   colorL:white;
+	 }
+-->
+</style>
+<script type="text/javascript" src="http://www.eztravel.com.tw/myresources/js/jquery-1.4.2.js" ></script>
+<script language="javascript">
+<!--
+     $(document).ready(function(){
+	    
+		var display=$('div').get();
+		$('#display1').text($(display[0]).text()+","+$(display[0]).attr('id'));
+		
+		
+		$.each(display,function(index,obj){
+		  $('#display2').append(index+". "+$(obj).text()+"<br>"); 
+		});
+		
+			 
+	 });
+-->
+</script>
+</head>
+
+<body>
+  <p id="display1"></p>
+  <div id="dis1" class="myDiv">dis1</div>
+  <br />
+  <div id="dis2" class="myDiv">dis2</div>
+  
+  <span id="display2" ></span>
+</body>
+</html>

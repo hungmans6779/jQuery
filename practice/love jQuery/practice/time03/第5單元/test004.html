@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=big5" />
+  <title>無標題文件</title>
+  <style type="text/css">
+    .formInput{
+	  font-family:Verdana, Arial, Helvetica, sans-serif;
+	  font-size:.93em;
+	  border:1px solid #999999;
+	  width:100pt;
+	}
+	
+    .labelInput{
+	  font-family:Verdana, Arial, Helvetica, sans-serif;
+	  font-size:.93em;
+	  border:3px dotted #FF0000;
+	  width:100pt;
+	}
+	
+	
+	.moreInput{
+	  font-family:Verdana, Arial, Helvetica, sans-serif;
+	  font-size:.93em;
+	  border:1px dotted #0000FF;
+	  width:100pt;
+	}
+  </style>
+  <script type="text/javascript" src="http://www.eztravel.com.tw/myresources/js/jquery-1.4.2.js" ></script>
+  <script language="javascript">
+  <!--
+  
+      $(document).ready(function(){
+	    $("form input").addClass('formInput');
+		$("label input").addClass('labelInput');
+		$("label + input").addClass('moreInput');  
+	  });
+  
+  -->
+  </script>
+</head>
+
+  <body>
+    <form>
+  	  這是一個包含input 元件的 form
+	  <input type="text" name="name1" size="20"  value="1"  />
+	  <input type="text" name="name2" size="20"  value="2"  />
+	  <input type="text" name="name3" size="20"  value="3"  />	  	  
+	</form>
+	
+	
+	<label>	  
+	  這是一個包含input 元件的label
+	  <input type="text" name="name4" size="20"  value="4"  />	  	  
+	</label>
+	<br />
+	
+	<label>這是一個不包含input 元件的label</label>
+	<input type="text" name="name5" size="20"  value="5"  />	  	  
+	<input type="text" name="name6" size="20"  value="6"  />	  	  
+  </body>
+</html>

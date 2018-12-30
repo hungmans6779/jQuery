@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>無標題文件</title>
+    <script type="text/javascript" language="javascript" src="/myresources/js/jquery-1.4.2.js" ></script>
+    <script language="javascript">
+	<!--
+	
+	    jQuery.noConflict();
+		
+        jQuery.fn.print=function(message){
+	      return this.each(function(){
+		    jQuery('<div class="result" />').text(String(message))
+			                                .appendTo(jQuery(this).find('div.results'));
+		  }); // end return this.each(function(){
+		}; // end jQuery.fn.print=function(){
+
+
+	    jQuery(document).ready(function($){
+		
+		   var counter=0;
+		   $('#example-11 a.add').click(function(){
+		      counter++;
+			  $('#example-11').print('counter = '+counter);
+			  return false;
+		   }); // end $('#example-10 a.add').click(function(){
+		
+		
+		   $('#example-11 a.subtract').click(function(){
+		      counter--;
+			  $('#example-11').print('counter = '+counter);
+			  return false;
+		   }); // end $('#example-10 a.add').click(function(){
+		   
+		   
+		}); // end $(document).ready(function(){
+	-->
+	</script>
+  </head>
+
+  <body>
+    <div id="example-11">
+      <h3>Example-11</h3>
+       <a class="add" >Add</a>
+       <span style="margin-left:1em" ></span>
+       <a class="subtract">Sub</a>
+      <div class="results"></div>
+    </div>
+  </body>
+
+</html>

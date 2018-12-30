@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=big5" />
+  <title>無標題文件</title>
+  <style type="text/css">
+  <!--
+    .myDiv{
+	  background-color:green;
+	  color:white;
+	  font:90% Verdana, Arial, Helvetica, sans-serif;
+	  width:400px;
+	  padding:5px 8px;
+	}
+  -->
+  </style>
+  <script type="text/javascript" src="http://www.eztravel.com.tw/myresources/js/jquery-1.4.2.js" ></script>
+  <script language="javascript">
+  <!--
+      $(document).ready(function(){
+	     var obj1={a:1,b:10,c:100,d:"1-one"};
+	     var obj2={a:3,b:30,c:300,d:"2-one"};		
+		 var obj3={a:5,c:500,d:"kevin-one"};		 
+		 var result=$.extend(obj1,obj2,obj3);		 
+		 var dis1="<div>dis1 ==> a="+obj1.a+",b="+obj1.b+",c="+obj1.c+",d="+obj1.d+"</div>";
+		 var dis2="<div>dis2 ==> a="+obj2.a+",b="+obj2.b+",c="+obj2.c+",d="+obj2.d+"</div>";
+		 var dis3="<div>dis3 ==> a="+obj3.a+",c="+obj3.c+",d="+obj3.d+"</div>";
+		 var resultDis="<div>result ==>  a="+result.a+",b="+result.b+",c="+result.c+",d="+result.d+"</div>";
+		 $("#dis").append(dis1).append(dis2).append(dis3).append(resultDis);
+	  });
+  -->
+  </script>
+</head>
+
+<body>
+  <div id="dis" class="myDiv"></div>
+
+</body>
+</html>

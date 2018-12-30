@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=big5" />
+  <title>無標題文件</title>
+  <style type="text/css">
+  <!--
+     .myDiv{
+	    background-color:green;
+		color:white;
+		width:400px;		
+		font:90% Verdana, Arial, Helvetica, sans-serif;
+		padding:5px 8px;		
+	 }
+  -->
+  </style>
+  <script language="javascript" src="/myjs/jQuery-1.3.2.js"></script>
+  <script language="javascript">
+  <!--
+  
+      $(document).ready(function(){
+	      var station=["台北","台中","嘉義","台南","高雄"];
+		  var ticket={台北:500,台中:300,嘉義:200,台南:100,高雄:50};
+		  
+		  $.each(station,function(){
+		     $("#"+this).text("前往 "+this+"的");
+		  });
+		  
+		  $.each(ticket,function(name,val){
+		      $("#"+name).append("票價："+val);
+		  });
+		  
+		  
+	  });
+	  
+  -->
+  </script>
+</head>
+
+<body>
+  <div id="dis" class="myDiv">
+     屏東車站到各站的票價<br>
+	 <div id="台北"></div>
+	 <div id="台中"></div>
+	 <div id="嘉義"></div>
+	 <div id="台南"></div>
+	 <div id="高雄"></div>
+	 <div id="地中海"></div>
+  </div>
+</body>
+</html>

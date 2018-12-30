@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>無標題文件</title>
+    <script type="text/javascript" language="javascript" src="/myresources/js/jquery-1.4.2.js" ></script>
+    <script language="javascript">
+	<!--
+	
+	    jQuery.fn.print=function(message){
+		  
+		   return this.each(function(){
+		     $('<div class="result" />').text(String(message))
+			                            .appendTo($(this).find('div.results'));
+		   }); // end return this.each(function(){
+		  
+		}; // end jQuery.fn.print=function(message){
+	
+	    $(document).ready(function(){
+		  
+		   function outerFn(){
+			  
+			  var outerVar=0;
+		     
+			  function innerFn1(){    
+				outerVar++;
+				$('#example-8').print(outerVar);
+			  }; // function innerFn1(){
+			 
+			 
+			  function innerFn2(){
+			    outerVar+=2;
+				$('#example-8').print(outerVar);
+			  } // end  function innerFn2(){
+			  
+			 
+			  return {'fn1':innerFn1,'fn2':innerFn2};
+			   
+		   }; // end function outerFn(){
+		
+		
+		   $('#example-8').print("*************************");
+		   var ref1=outerFn();
+		   ref1.fn1();
+		   ref1.fn2();
+		   ref1.fn1();   
+		   $('#example-8').print("*************************");
+		   var ref2=outerFn();
+		   ref2.fn1();
+		   ref2.fn2();
+		   ref2.fn1();
+		   $('#example-8').print("*************************");
+		   
+		}); // end $(document).ready(function(){
+	-->
+	</script>
+  </head>
+
+  <body>
+    <div id="example-8">
+      <h3>Example-8</h3>
+      <div class="results"></div>
+    </div>
+  </body>
+
+</html>

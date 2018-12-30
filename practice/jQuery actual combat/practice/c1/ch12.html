@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>無標題文件</title>
+    <script type="text/javascript" language="javascript" src="/myresources/js/jquery-1.4.2.js" ></script>
+    <script language="javascript">
+	<!--
+	
+	    jQuery.noConflict();
+		
+        jQuery.fn.print=function(message){
+	      return this.each(function(){
+		    jQuery('<div class="result" />').text(String(message))
+			                                .appendTo(jQuery(this).find('div.results'));
+		  }); // end return this.each(function(){
+		}; // end jQuery.fn.print=function(){
+
+
+	    jQuery(document).ready(function($){
+		   
+		   $('#example-12').print("***********************************************");
+		   
+		   $('#example-12 a').each(function(index){
+			  $(this).click(function(){
+				 $('#example-12').print(index);
+			  }); // end $(this).click(function(){
+		   }); // end $('#example-12').each(function(index){ 
+		   
+		}); // end $(document).ready(function(){
+	-->
+	</script>
+  </head>
+
+  <body>
+    <div id="example-12">
+      <h3>Example-12</h3>
+        <a>a1</a><br />
+        <a>a2</a><br />
+        <a>a3</a><br />
+        <a>a4</a><br />
+        <a>a5</a><br />
+      <div class="results"></div>
+    </div>
+  </body>
+
+</html>

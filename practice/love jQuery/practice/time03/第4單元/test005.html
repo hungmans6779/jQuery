@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=big5" />
+   <title>無標題文件</title>
+   <script type="text/javascript" src="http://www.eztravel.com.tw/myresources/js/jquery-1.4.2.js" ></script>
+   <style type="text/css">
+      .myDiv{
+	    position:absolute;
+		margin-left:200px;
+		margin-top:100px;
+		width:50px;
+		height:50px;
+        background-color:#FF0000;		
+	  }
+   </style>
+   <script language="javascript">
+   <!--
+      $(document).ready(function(){
+	    $("#moveRight").click(function(){
+		  $(".myDiv").animate({left:'+1000px'},"slow");
+		});
+		
+		$("#moveLeft").click(function(){
+		  $(".myDiv").animate({left:'-200px'},"slow");
+		});
+	  });
+   -->
+   </script>
+
+  </head>
+
+  <body>
+    <button id="moveLeft">往左移動</button>
+	<span style="margin-left"></span>
+	<button id="moveRight">往右移動</button>
+	<div class="myDiv"></div>
+  </body>
+</html>

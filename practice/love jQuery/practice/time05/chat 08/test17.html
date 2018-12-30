@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>無標題文件</title>
+<style type="text/css" >
+<!--
+   .myS1{
+     background-color:red;
+	 color:white;
+   }
+-->
+</style>
+<script type="text/javascript" src="http://www.eztravel.com.tw/myresources/js/jquery-1.4.2.js" ></script>
+<script language="javascript">
+<!--
+
+    $(document).ready(function(){
+	   
+	   $("#myForm").submit(function(){
+	       
+		   $("#myForm :input:not('#submit')").each(function(){
+		     
+			 var data=$.trim($(this).val());
+			 
+			 if(data==""){
+			    alert($(this).attr("name")+" 不可空白.....");
+			 }
+			 
+			 if(data!=""){
+			   $("#dis").append($(this).attr('name')+" = "+data).addClass('myS1');
+			   $('#dis').append('<br>');
+			 }
+			 
+			
+			 
+		   }); // end $("#myForm :input:not('#submit')").each(function()
+	      
+		  return false;
+		
+	   }); // end $("#myForm").submit(function()
+	   
+	   
+	});
+-->
+</script>
+</head>
+
+<body>
+  <form id="myForm" >
+    使用者姓名：<input type="text" name="userName" size="10" value="kevin"  /><br />
+    䁥稱：<input type="text" name="nikeName" size="10" value="  "  /><br />
+    <input type="submit" value="送出" id="submit"  />
+  </form>
+  <div id="dis"></div>
+</body>
+</html>

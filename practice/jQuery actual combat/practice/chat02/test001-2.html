@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>無標題文件</title>
+<style type="text/css">
+<!--
+  .horizontal{
+    float:left;
+	list-style:none;
+	margin:30px;
+  }
+  
+  .sub-level{
+    background:#ccc;
+  }
+  
+  a{
+    color:blue;
+  }
+  
+  a.mailto{
+	background: url(images/email.png) no-repeat 100% 2px;
+	padding-right:20px;
+  }
+  
+  a.pdflink{
+	background: url(images/pdf.png) no-repeat 100% 0;
+	padding-right:20px;
+  }
+  
+  a.henrylink{
+    background-color:#fff;
+	padding:2px;
+	border:1px solid #000;
+  }
+  
+  
+-->
+</style>
+<script language="javascript" src="http://www.eztravel.com.tw/myresources/js/jquery-1.4.2.js" ></script>
+<script language="javascript">
+<!--
+   $(document).ready(function(){
+     
+	 $('#selected-plays > li').addClass('horizontal');
+	 $('#selected-plays li:not(.horizontal)').addClass('sub-level');
+	 
+	 
+	 $('a[href^="mailto"]').addClass('mailto');
+     $('a[href$="pdf"]').addClass('pdflink');
+     $('a[href^="http"],a[href*="henry"]').addClass('henrylink');
+	 
+   });
+-->
+</script>
+</head>
+
+<body>
+  <ul id="selected-plays" >
+    <li>Comeies
+      <ul>
+        <li><a href='http://www.mysite.com/asyoulikeit/' >As You Like It</a></li> 
+        <li>All's Well That Ends Well</li> 
+        <li>A Midsummer Night's Dream</li> 
+        <li>Twelfth Night</li> 
+      </ul>
+    </li>
+    <li>Tragedies
+      <ul>
+        <li><a href="../../../jQuery implement/time01/chat02/hamlet.pdf">Hamlet</a></li>
+        <li>Macbeth</li>
+        <li>Romeo and Juliet</li>
+      </ul>
+    </li>
+    <li>Histories
+      <ul>
+        <li>Henry IV(<a href='mailto:kevinhung@eztravel.com.tw'>kevin mail</a>)</li>
+          <ul>
+            <li>Part I</li>
+            <li>Part II</li>
+          </ul>
+        <li><a href='www.shakespeare.co.uk/henryv.htm' >Henry V</a></li>
+        <li>Richard II</li>
+      </ul>
+    </li>
+  </ul>
+</body>
+</html>

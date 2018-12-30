@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>jQuery</title>	
+<script type="text/javascript" src="../jquery-1.2.1.pack.js"></script>
+<script type="text/javascript" src="jquery.select_text.js"></script>
+
+<style>
+html
+{
+	background-color:black;
+	color:white;
+
+}
+a { text-decoration: none; font-weight: bold; }
+
+.mydis{
+display:none;
+width:400px;
+background-color:red;
+	color:white;
+	font: normal 90% "Arial","Trebuchet MS", "Lucida Grande",Verdana,  Sans-Serif,"新細明體";	
+}
+</style>
+<script>
+$(document).ready(function(){
+$('p').click(function(){
+$(this).select_text('dis');
+});
+});
+</script>
+</HEAD>
+ 
+<body>
+
+<p> this is a test 1</p>
+<p> this is a test 2</p>
+<p> this is a test 3</p>
+<div id=dis class=mydis></div>
+
+</body>
+</html>
+ 

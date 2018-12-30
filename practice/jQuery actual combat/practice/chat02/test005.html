@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>無標題文件</title>
+<style type="text/css" >
+<!--
+
+   tr{
+      background-color:#00CCFF;
+   }
+   
+   .alt{
+      background-color:#ccc;
+   }
+   
+   .highlight{
+     font-weight:bold;
+	 font-style:italic;
+	 color:white;
+   }
+   
+-->
+</style>
+<script language="javascript" src="/myresources/js/jquery-1.3.2.js" ></script>
+<script language="javascript">
+<!--
+   
+   $(document).ready(function(){
+ 
+     $("tr:odd").addClass('alt');
+
+       // $("td:contains('Hamlet')").next().addClass('highlight');
+       // $("td:contains('Hamlet')").nextAll().addClass('highlight');
+       //$("td:contains('Hamlet')").prev().addClass('highlight');
+	    //$("td:contains('History')").prevAll().addClass('highlight');
+	  
+	    //$("td:contains('Hamlet')").nextAll().andSelf().addClass('highlight');
+		
+	    
+	    $("td:contains('Comedy')").siblings().addClass('highlight');
+	  
+	  //  $("td:contains('Henry')").parent().children().addClass('highlight');
+		
+   });
+   
+-->
+</script>
+</head>
+
+<body>
+ <table border="0" cellspacing="1" cellpadding="5" >
+  <tr>
+  	<td>As You Like It</td>
+  	<td>Comedy</td>
+    <td>1</td>
+  </tr>
+  <tr>
+  	<td>All's Well that Ends Well</td>
+  	<td>Comedy</td>
+    <td>2</td>
+  </tr>
+  <tr>
+  	<td>Hamlet</td>
+  	<td>Tragedy</td>
+    <td>3</td>
+  </tr>
+  <tr>
+  	<td>Macbeth</td>
+  	<td>Tragedy</td>
+    <td>4</td>
+  </tr>
+  <tr>
+  	<td>Romeo and Juliet</td>
+  	<td>Tragedy</td>
+    <td>5</td>
+  </tr>
+  <tr>
+  	<td>Henry IV, Part I</td>
+  	<td>History</td>
+    <td>6</td>
+  </tr>
+  <tr>
+  	<td>Henry V</td>
+  	<td>History</td>
+    <td>7</td>
+  </tr>
+</table>
+</body>
+</html>

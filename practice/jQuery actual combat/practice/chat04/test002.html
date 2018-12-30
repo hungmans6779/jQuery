@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>無標題文件</title>
+<style type="text/css">
+<!--
+  .button {
+    width: 150px;
+    padding: 5px;
+    margin: .5em 0;
+    border: 1px solid #e3e3e3;
+	margin-left:0.5em;
+    position: relative;
+}
+-->
+</style>
+<script language="javascript" src="/myresources/js/jquery-1.3.2.js"></script>
+<script language="javascript">
+<!--
+      jQuery.noConflict();
+	  
+	  jQuery(document).ready(function($){
+	  
+	    $('.button').click(function(){
+
+		 switch(this.id){
+		  
+		   case 'b1':  // (漸層)顯示
+		      $('#img1').fadeIn("slow");
+			  break;
+		   case 'b2':  // (漸層)隱藏
+		      $('#img1').fadeOut("slow");
+			  break;	  
+		   case 'b3':  // (左上右下)顯示
+		      $('#img1').slideDown('slow');
+			  break;
+		   case 'b4':  // (右下左上)隱藏
+		      $('#img1').slideUp('slow');
+			  break;
+		   default:
+		      alert("此按鈕未定義");
+		      break;
+		 } // end switch(this.id)
+		
+		}); // end  $('.button').click(function()
+	   
+	  }); // end jQuery(document).ready(function($){
+	  
+-->
+</script>
+</head>
+
+<body>
+  <button id="b1" class="button" >fadeIn (漸層)顯示</button>
+  <button id="b2" class="button" >fadeOut (漸層)隱藏</button>
+  <button id="b3" class="button" >SlideUp (左上右下)顯示</button>
+  <button id="b4" class="button" >SlideDown (右下左上)隱藏</button>
+  <hr />
+  <img id="img1" src="images/cat.jpg" ></img>
+</body>
+</html>

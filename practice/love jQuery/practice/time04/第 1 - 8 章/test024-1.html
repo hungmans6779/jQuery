@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>無標題文件</title>
+ <style type="text/css" rel="stylesheet">
+ <!--
+      .myDiv{
+	     background-color:green;
+		 color:white;
+		 font-family:Verdana, Arial, Helvetica, sans-serif;
+		 font-size:16px;
+		 width:200px;
+		 padding:20px 20px;
+	  }
+ -->
+ </style>
+ <script type="text/javascript" src="http://www.eztravel.com.tw/myresources/js/jquery-1.4.2.js" ></script>
+ <script language="javascript">
+  <!--
+        $(document).ready(function(){
+		   var city=["台北","新竹","台中","台南","高雄"];
+		   var ticketPrice={台北:100,新竹:200,台中:300,台南:400,高雄:500};
+		   // var ticketPrice={"台北":100,"新竹":200,"台中":300,"台南":400,"高雄":500};
+		   
+		   $.each(city,function(){
+		     $('#'+this).text('前往 '+this +' 的票價：');
+		   });
+		   
+		   $.each(ticketPrice,function(elem,value){
+		     $('#'+elem).append(value);
+		   }); // end $.each(ticketPrice,function(index,value){
+		   
+		   
+		   
+		});
+  -->
+ </script>
+</head>
+
+<body>
+  <div class="myDiv">屏東前往各地現在的票價是
+    <div id="台北"></div>
+    <div id="新竹"></div>
+    <div id="台中"></div>
+    <div id="台南"></div>
+    <div id="高雄"></div>
+  </div>
+</body>
+</html>

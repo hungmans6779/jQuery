@@ -1,0 +1,242 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+        "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Cart</title>
+    <link rel="stylesheet" href="../../../time01/chat08/test003/styles/bookstore.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../../../time01/chat08/test003/styles/tables.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../../../time01/chat08/test003/styles/forms.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../../../time01/chat08/test003/styles/rotators.css" type="text/css" media="screen" />
+    <script type="text/javascript" language="javascript" src="/myresources/js/jquery-1.3.2.js" ></script>
+    <script type="text/javascript">
+	  <!--
+	      
+		  jQuery.noConflict();
+		  
+		  jQuery(document).ready(function($){
+		  
+		     
+		     // $('#cart tbody tr:nth-child(even)').css({'backgroundColor':'red'});
+		     $('#cart tbody tr:nth-child(even)').addClass('alt');
+			
+			 $('.quantity input').keypress(function(event){
+			    var keyCode;
+				if(navigator["appName"]=="Microsoft Internet Explorer"){
+				  keyCode=event.keyCode;
+				}else if(navigator["appName"]=="Netscape"){
+				  keyCode=event.charCode;
+				}else{
+				  keyCode=event.keyCode;
+				}
+              
+			    if(keyCode && (keyCode <48 || keyCode >57) ){
+				  event.preventDefault();
+				}
+			 });  // end $('.quantity input').keypress(function(event){
+			 
+			 
+			 
+             
+			
+			 $('#cart tbody td.quantity input').keyup(function(){
+			    var totalQuantity=0;
+				var totalCost=0;
+				$('#cart tbody tr').each(function(){
+				   var price=$.trim($('td.price',this).text());
+				   price=parseFloat(price.replace(/^[^\d.]*/,''));
+				   price=isNaN(price)?0:price;
+				   var quantity=$('td.quantity input',this).val();
+				   totalQuantity+=parseInt(quantity,10);
+				   var cost=price*quantity;
+				   totalCost+=cost;
+				   $('td.cost',this).text('$ '+cost.toFixed(2));
+				}); // end $('#cart tbody tr').each(function(){
+
+				$('#cart tfoot tr.shipping td.quantity').text(String(totalQuantity));
+				$('#cart tfoot tr.subtotal td.cost').text('$ '+String(totalCost.toFixed(2)));
+			 });
+			 
+           
+ 
+		  }); // end jQuery(document).ready(function($){
+		  
+	  -->
+	</script>
+</head>
+
+
+<body>
+
+  <div id="wrapper">
+  
+  	<div id="branding">
+	  <h1><a href="../../../time01/chat08/index.html">Learning jQuery</a></h1>
+  	</div>
+  	<div id="container">
+    
+  		<div id="content">
+        
+  			<h2>Cart</h2>
+            
+  			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam adipiscing, risus quis fringilla venenatis, diam nisi adipiscing magna, sit amet rutrum risus nunc sit amet odio. Donec sit amet ipsum. Nam consequat rhoncus lacus. Pellentesque libero erat, elementum a, mattis in, molestie id, magna. Integer sed libero vitae lacus elementum egestas. Nullam massa magna, gravida sed, porta vel, ultricies at, purus. Maecenas turpis. Vivamus ante risus, eleifend sed, scelerisque at, lacinia vitae, nunc. Vestibulum ut arcu. Cras ut magna. Pellentesque eleifend commodo est. </p>
+            
+  			<div id="order-confirmation">
+            
+    			<div id="shipping">
+    			  <h3>Shipping to:</h3>
+    			  <p id="shipping-name"><a href="../../../time01/chat08/test003/shipping.php">Steve Schoon</a></p>
+    			</div>
+
+<!-- form for chapter 8, shopping cart   -->
+
+
+
+
+<form action="../../../time01/chat08/test003/checkout.php" method="post">
+
+  <table id="cart">
+    <thead>
+      <tr>
+        <th class="item">Item</th>
+        <th class="quantity">Quantity</th>
+        <th class="price">Price</th>
+        <th class="cost">Total</th>
+      </tr>
+    </thead>
+    
+    
+    <tfoot>
+      <tr class="subtotal">
+        <td class="item">Subtotal</td>
+        <td class="quantity"></td>
+        <td class="price"></td>
+        <td class="cost">$152.95</td>
+      </tr>              
+      <tr class="tax">
+        <td class="item">Tax</td>
+        <td class="quantity"></td>
+        <td class="price">6%</td>
+        <td class="cost">$9.18</td>
+      </tr>              
+      <tr class="shipping">
+        <td class="item">Shipping</td>
+        <td class="quantity">5</td>
+        <td class="price">$2 per item</td>
+        <td class="cost">$10.00</td>
+      </tr>              
+      <tr class="total">
+        <td class="item">Total</td>
+        <td class="quantity"></td>
+        <td class="price"></td>
+        <td class="cost">$172.13</td>
+      </tr>              
+      <tr class="actions">
+        <td></td>
+        <td>
+          <input type="button" name="recalculate" value="Recalculate" id="recalculate" />
+        </td>
+        <td></td>
+        <td>
+          <input type="submit" name="submit" value="Place Order" id="submit" />
+        </td>
+      </tr>
+    </tfoot>
+    
+    
+    <tbody>
+      <tr>
+        <td class="item">
+          Building Telephony Systems With Asterisk
+        </td>
+        <td class="quantity">
+          <input type="text" name="quantity-2" value="1" id="quantity-2" maxlength="3" />
+        </td>
+        <td class="price">$26.99</td>
+        <td class="cost">$26.99</td>
+      </tr>
+      <tr>
+        <td class="item">
+          Smarty PHP Template Programming and Applications
+        </td>
+        <td class="quantity">
+          <input type="text" name="quantity-1" value="2" id="quantity-1" maxlength="3" />
+        </td>
+        <td class="price">$35.99</td>
+        <td class="cost">$71.98</td>
+      </tr>
+      <tr>
+        <td class="item">
+          Creating your MySQL Database
+        </td>
+        <td class="quantity">
+          <input type="text" name="quantity-3" value="1" id="quantity-3" maxlength="3" />
+        </td>
+        <td class="price">$17.99</td>
+        <td class="cost">$17.99</td>
+      </tr>
+      <tr>
+        <td class="item">
+          Drupal: Creating Blogs, Forums, Portals, and Community Websites
+        </td>
+        <td class="quantity">
+          <input type="text" name="quantity-4" value="1" id="quantity-4" maxlength="3" />
+        </td>
+        <td class="price">$35.99</td>
+        <td class="cost">$35.99</td>
+      </tr>
+    </tbody>
+    
+    
+  </table>
+  
+  
+</form>
+        </div>
+        
+  	  </div> <!-- end content -->
+      
+      
+      <div id="primary-nav">
+    		<ul>
+    			<li><a href="../../../time01/chat08/books/index.html">Books</a></li>
+    			<li><a href="../../../time01/chat08/news/index.html">News</a></li>
+    			<li><a href="../../../time01/chat08/contact/index.html">Contact</a></li>
+    		</ul>    
+      </div>
+      
+  	</div> <!-- end container -->
+    
+    
+  	<div id="secondary-nav">
+  	  <h3><a class="active" href="../../../time01/chat08/test003/index.html">Your Cart</a></h3>
+  	</div> 
+
+
+  	<div id="sidebar">
+
+  	    <h2>Sidebar</h2>
+        <div>
+  		  <form id="search" action="../../../time01/chat08/test003/search/index.php" method="post" accept-charset="utf-8">
+            <label for="search-text">search the site</label><input type="text" name="search-text" id="search-text" />
+    	  </form>
+      </div>
+  			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam adipiscing, risus quis fringilla venenatis, diam nisi adipiscing magna, sit amet rutrum risus nunc sit amet odio. Praesent ullamcorper. Donec sit amet ipsum. Nam consequat rhoncus lacus. Pellentesque libero erat, elementum a, mattis in, molestie id, magna. Integer sed libero vitae lacus elementum egestas. Nullam massa magna, gravida sed, porta vel, ultricies at, purus. Maecenas turpis. Vivamus ante risus, eleifend sed, scelerisque at, lacinia vitae, nunc. Vestibulum ut arcu. Cras ut magna. Pellentesque eleifend commodo est. Sed vitae odio eget ipsum tristique hendrerit. Cras elementum turpis ut sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut sed erat at velit bibendum varius. Sed venenatis sagittis lectus. Cras ligula felis, ultrices et, imperdiet et, laoreet sed, odio. Morbi nunc tellus, hendrerit in, aliquet eget, rutrum a, magna. Nunc nunc.</p>
+
+  	</div> <!-- end sidebar -->
+    
+    
+  	<div id="footer">
+  		This is the footer.
+  	</div>
+    
+    
+    
+  </div> <!-- end wrapper -->
+
+
+</body>
+
+
+</html>

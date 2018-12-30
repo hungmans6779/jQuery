@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>無標題文件</title>
+  <style type="text/css">
+  <!--
+    .forminput{
+	  font-family:"Courier New", Courier, monospace;
+	  border:1px solid #666666;
+	  width:100px;
+	  font-size:.93em;	  
+	}
+	
+	
+	.labelinput{
+      font-family:"Courier New", Courier, monospace;
+	  border:3px dotted #003399;
+	  width:100px;
+	  font-size:.93em;	
+	}
+  -->
+  </style>
+  <script type="text/javascript" src="http://www.eztravel.com.tw/myresources/js/jquery-1.3.2.js" ></script>
+  <script language="javascript">
+  <!--
+    $(document).ready(function(){
+	  $("form > input").addClass('forminput');
+	  $("label input").addClass('labelinput');
+	});
+  -->
+  </script>
+</head>
+
+<body>
+  這是一個包含在表單的input
+  <form>
+    <input type="text" name="t1"  />
+    <input type="text" name="t2"  />
+    <input type="text" name="t3"  />    
+  </form><br />
+  這是包含在Label裏的input 
+  <label>
+    <input type="text" name="tt1"  />
+    <input type="text" name="tt2"  />
+  </label><br />
+   這是一個 Label 但不包含任何input
+  <input type="text" name="ttt1"  />
+</body>
+</html>
